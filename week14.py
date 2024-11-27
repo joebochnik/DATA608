@@ -1,5 +1,9 @@
 import pandas as pd
 import plotly.express as px
+import streamlit as st
+
+# Streamlit app title
+st.title("NFL 2024 Cumulative Point Differential Rankings")
 
 # Load the dataset
 file_path = 'spreadspoke_scores.csv'
@@ -70,4 +74,5 @@ fig.update_layout(
     legend=dict(traceorder="grouped")  # Sort alphabetically by team name
 )
 
-fig.show()
+# Display the Plotly chart in Streamlit
+st.plotly_chart(fig, use_container_width=True)
